@@ -15,6 +15,14 @@ namespace BooksListTutorial
   {
     public MainPage() {
       InitializeComponent();
+
+      if(Device.Idiom == TargetIdiom.Phone) {
+        TabletView.IsVisible = false;
+        PhoneView.IsVisible = true;
+      } else {
+        TabletView.IsVisible = true;
+        PhoneView.IsVisible = false;
+      }
     }
 
     private void MicrosoftBooks_Clicked(object sender, EventArgs e) {
