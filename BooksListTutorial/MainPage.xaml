@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:BooksListTutorial"
              mc:Ignorable="d"
              x:Class="BooksListTutorial.MainPage">
 
@@ -38,43 +39,103 @@
       </Button>
     </StackLayout>
 
-    <Grid x:Name="TabletView">
+    <Grid x:Name="TabletView"
+          VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand">
       <Grid.RowDefinitions>
-        <RowDefinition Height="200"></RowDefinition>
-        <RowDefinition Height="200"></RowDefinition>
+        <RowDefinition Height="40"></RowDefinition>
+        <RowDefinition Height="*"></RowDefinition>
+        <RowDefinition Height="Auto"></RowDefinition>
+        <RowDefinition Height="*"></RowDefinition>
+        <RowDefinition Height="Auto"></RowDefinition>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
       </Grid.ColumnDefinitions>
-      <Button Grid.Row="0" Grid.Column="0" 
-              Margin="20,20"
+
+      <!-- Title-->
+      <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+              VerticalOptions="Center"
               HorizontalOptions="Center" 
+              FontSize="Medium"
+              FontAttributes="Bold"
               WidthRequest="300"
-              Text="Microsoft Books"
-              Clicked="MicrosoftBooks_Clicked"
-              ></Button>
-      <Button Grid.Row="0" Grid.Column="1" 
-              Margin="20,20"
-              HorizontalOptions="Center" 
-              WidthRequest="300"
-              Text="Programming"
-              Clicked="Programming_Clicked"
-              ></Button>
-      <Button Grid.Row="1" Grid.Column="0" 
-              Margin="20,20"
-              HorizontalOptions="Center" 
-              WidthRequest="300"
-              Text="Mobile"
-              Clicked="Mobile_Clicked"
-              ></Button>
-      <Button Grid.Row="1" Grid.Column="1" 
-              Margin="20,20"
-              HorizontalOptions="Center" 
-              WidthRequest="300"
-              Text="Machine Learning"
-              Clicked="MachineLearning_Clicked"
-              ></Button>
+              Text="Book List"
+              ></Label>
+
+      <!-- Microsoft -->
+      <Image Grid.Row="1" Grid.Column="0"
+             Aspect="AspectFill"
+             Source="{local:ImageResource BooksListTutorial.Images.tadas_sar_microsoft_unsplash.jpg}">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer
+            NumberOfTapsRequired="1"
+            Tapped="MicrosoftBooks_Clicked"></TapGestureRecognizer>
+        </Image.GestureRecognizers> 
+      </Image>
+      <Label Grid.Row="2" Grid.Column="0"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             FontSize="Small"
+             HorizontalTextAlignment="Center"
+             TextColor="Blue"
+             Text="Microsoft"></Label> 
+
+      <!-- Programming -->
+      <Image Grid.Row="3" Grid.Column="0"
+             Aspect="AspectFill"
+             Source="{local:ImageResource BooksListTutorial.Images.chris_ried_program_unsplash.jpg}">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer
+            NumberOfTapsRequired="1"
+            Tapped="Programming_Clicked"></TapGestureRecognizer>
+        </Image.GestureRecognizers> 
+      </Image>
+      <Label Grid.Row="4" Grid.Column="0"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             FontSize="Small"
+             HorizontalTextAlignment="Center"
+             TextColor="Blue"
+             Text="Programming"></Label> 
+
+      <!-- Mobile -->
+      <Image Grid.Row="1" Grid.Column="1"
+             Aspect="AspectFill"
+             Source="{local:ImageResource BooksListTutorial.Images.rodion_kutsaev_mobile_unsplash.jpg}">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer
+            NumberOfTapsRequired="1"
+            Tapped="Mobile_Clicked"></TapGestureRecognizer>
+        </Image.GestureRecognizers> 
+      </Image>
+      <Label Grid.Row="2" Grid.Column="1"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             FontSize="Small"
+             HorizontalTextAlignment="Center"
+             TextColor="Blue"
+             Text="Mobile"></Label> 
+
+      <!-- Machine Learning-->
+      <Image Grid.Row="3" Grid.Column="1"
+             Aspect="AspectFill"
+             Source="{local:ImageResource BooksListTutorial.Images.pietro_jeng_ml_unsplash.jpg}">
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer
+            NumberOfTapsRequired="1"
+            Tapped="MachineLearning_Clicked"></TapGestureRecognizer>
+        </Image.GestureRecognizers> 
+      </Image>
+      <Label Grid.Row="4" Grid.Column="1"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             FontSize="Small"
+             HorizontalTextAlignment="Center"
+             TextColor="Blue"
+             Text="Machine Learning"></Label> 
+
 
     </Grid>
   </StackLayout>
