@@ -10,10 +10,33 @@
         <!-- Place new controls here -->
         <Button 
             Margin="20,20"
-            WidthRequest="100"
+            WidthRequest="300"
+            HorizontalOptions="Center"
             Text="Microsoft Books"
             Clicked="MicrosoftBooks_Clicked">
         </Button>
+        <Button 
+            Margin="20,20"
+            WidthRequest="300"
+            HorizontalOptions="Center"
+            Text="Programming"
+            Clicked="Programming_Clicked">
+        </Button>
+        <Button 
+            Margin="20,20"
+            WidthRequest="300"
+            HorizontalOptions="Center"
+            Text="Mobile"
+            Clicked="Mobile_Clicked">
+        </Button>
+        <Button 
+            Margin="20,20"
+            WidthRequest="300"
+            HorizontalOptions="Center"
+            Text="Machine Learning"
+            Clicked="MachineLearning_Clicked">
+        </Button>
+
      </StackLayout>
 
 </ContentPage>
