@@ -11,6 +11,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\chris_ried_ieic5Tq8YMk_unsplash.jpg" />
+    <None Remove="Assets\pietro_jeng_n6B49lTx7NM_unsplash.jpg" />
+    <None Remove="Assets\rodion_kutsaev_0VGG7cqTwCo_unsplash.jpg" />
+    <None Remove="Assets\tadas_sar_T01GZhBSyMQ_unsplash.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\chris_ried_ieic5Tq8YMk_unsplash.jpg" />
+    <EmbeddedResource Include="Assets\pietro_jeng_n6B49lTx7NM_unsplash.jpg" />
+    <EmbeddedResource Include="Assets\rodion_kutsaev_0VGG7cqTwCo_unsplash.jpg" />
+    <EmbeddedResource Include="Assets\tadas_sar_T01GZhBSyMQ_unsplash.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.908675" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
