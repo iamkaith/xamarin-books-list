@@ -11,17 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\chris_ried_ieic5Tq8YMk_unsplash.jpg" />
-    <None Remove="Assets\pietro_jeng_n6B49lTx7NM_unsplash.jpg" />
-    <None Remove="Assets\rodion_kutsaev_0VGG7cqTwCo_unsplash.jpg" />
-    <None Remove="Assets\tadas_sar_T01GZhBSyMQ_unsplash.jpg" />
+    <None Remove="Images\chris_ried_program_unsplash.jpg" />
+    <None Remove="Images\pietro_jeng_ml_unsplash.jpg" />
+    <None Remove="Images\rodion_kutsaev_mobile_unsplash.jpg" />
+    <None Remove="Images\tadas_sar_microsoft_unsplash.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Assets\chris_ried_ieic5Tq8YMk_unsplash.jpg" />
-    <EmbeddedResource Include="Assets\pietro_jeng_n6B49lTx7NM_unsplash.jpg" />
-    <EmbeddedResource Include="Assets\rodion_kutsaev_0VGG7cqTwCo_unsplash.jpg" />
-    <EmbeddedResource Include="Assets\tadas_sar_T01GZhBSyMQ_unsplash.jpg" />
+    <EmbeddedResource Include="Images\chris_ried_program_unsplash.jpg" />
+    <EmbeddedResource Include="Images\pietro_jeng_ml_unsplash.jpg" />
+    <EmbeddedResource Include="Images\rodion_kutsaev_mobile_unsplash.jpg" />
+    <EmbeddedResource Include="Images\tadas_sar_microsoft_unsplash.jpg" />
   </ItemGroup>
 
   <ItemGroup>
