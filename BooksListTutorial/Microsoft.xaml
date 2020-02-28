@@ -7,42 +7,65 @@
              x:Class="BooksListTutorial.Microsoft"
              Padding="20,20"
              Title="Microsoft Books">
-  <ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement">
-    <d:ListView.ItemsSource>
-        <x:Array Type="{x:Type x:String}">
-            <x:String>Item 1</x:String>
-            <x:String>Item 2</x:String>
-            <x:String>Item 3</x:String>
-            <x:String>Item 4</x:String>
-            <x:String>Item 5</x:String>
-        </x:Array>
-    </d:ListView.ItemsSource>
-    <!--Built in Cells-->
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <TextCell Text="{Binding .}" d:Text="{Binding .}" />
-        </DataTemplate>
-    </ListView.ItemTemplate>
+
+  <ListView x:Name="BooksListView"
+            ItemsSource="{Binding ItemsGrouped}"
+            ItemSelected="Handle_ItemSelected"
+            HasUnevenRows="True"
+            GroupShortNameBinding="{Binding Key}"
+            IsGroupingEnabled="True"
+            GroupDisplayBinding="{Binding Key}"
+            IsPullToRefreshEnabled="True"
+            CachingStrategy="RecycleElement"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            RefreshCommand="{Binding RefreshDataCommand}">
     
     <!--Custom View Cells-->
-    <!--
+    <ListView.Header>
+      <StackLayout Padding="10"
+                   Orientation="Horizontal"
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="#da">
+
+        <Label Text="Microsoft and .NET Books"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="FillAndExpand"
+               TextColor="Black"
+               FontAttributes="Bold"></Label>
+
+      </StackLayout>
+    </ListView.Header>
+
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
           <StackLayout>
-            <Label Text="{Binding Text}" 
-                   d:Text="{Binding .}"
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   d:Text="Detail"
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
+          
+            <Label Text="{Binding Text}"
+                   Style="{DynamicResource ListItemTextStyle}"
+                   FontAttributes="Bold"></Label>
+
+            <Label Text="{Binding Detail}"
+                   Style="{DynamicResource ListItemDetailTextStyle}"></Label>
+
           </StackLayout>
         </ViewCell>
       </DataTemplate>
     </ListView.ItemTemplate>
-    -->
+
+    <ListView.Footer>
+      <StackLayout Padding="10"
+                   Orientation="Horizontal"
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="#da">
+
+        <Label Text="Visit www.apress.com"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="FillAndExpand"
+               TextColor="Black"
+               FontAttributes="Bold"></Label>
+      </StackLayout>
+    </ListView.Footer>
+
   </ListView>
 </ContentPage>

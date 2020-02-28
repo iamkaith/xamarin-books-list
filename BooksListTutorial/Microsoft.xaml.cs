@@ -3,40 +3,35 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using BooksListTutorial.ViewModels;
+using Xamarin.Essentials;
 
 namespace BooksListTutorial
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Microsoft : ContentPage
-    {
-        public ObservableCollection<string> Items { get; set; }
+  [XamlCompilation(XamlCompilationOptions.Compile)]
+  public partial class Microsoft : ContentPage
+  {
+    public ObservableCollection<string> Items { get; set; }
 
-        public Microsoft() {
-            InitializeComponent();
+    public Microsoft() {
+      InitializeComponent();
 
-            Items = new ObservableCollection<string>
-            {
-                "Item 1",
-                "Item 2",
-                "Item 3",
-                "Item 4",
-                "Item 5"
-            };
+      // MVVM binding
+      BindingContext = new MicrosoftBooksViewModel(); 
 
-            MyListView.ItemsSource = Items;
-        }
-
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e) {
-            if (e.Item == null)
-                return;
-
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
-
-            //Deselect Item
-            ((ListView)sender).SelectedItem = null;
-        }
     }
+
+    async void Handle_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
+      if (e.SelectedItem == null)
+        return;
+
+      // deprecated Device.OpenUri(new Uri(e.SelectedItem.ToString()));
+      await Launcher.OpenAsync(new Uri(e.SelectedItem.ToString()));
+
+      //Deselect Item
+      ((ListView)sender).SelectedItem = null;
+    }
+  }
 }

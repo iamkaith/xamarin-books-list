@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using BooksListTutorial.ViewModels;
 
 namespace BooksListTutorial
 {
@@ -16,8 +15,6 @@ namespace BooksListTutorial
   {
     public MainPage() {
       InitializeComponent();
-
-      BindingContext = new MicrosoftBooksViewModel();
 
       if(Device.Idiom == TargetIdiom.Phone) {
         TabletView.IsVisible = false;
